@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
+import { TextInputComponent } from './components/text-input/text-input.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [TextInputComponent,ImageSliderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

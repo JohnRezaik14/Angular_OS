@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="child">
+    <label for="name">Enter Name</label>
+    <input
+      type="text"
+      name="name"
+      placeholder="Enter Your Name"
+      [(ngModel)]="usrName"
+    />
+    <p>{{ usrName }}</p>
+    <button type="button" (click)="resetName()">reset</button>
+  </div>
+</div>
