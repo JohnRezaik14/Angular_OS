@@ -1,0 +1,74 @@
+<div
+  class="bg-gray-300 flex flex-col justify-center gap-1 first:w-[80%] first:m-auto [&>:not(input)]:text-center p-9 rounded-xl"
+>
+  <!--^ Name Input -->
+  <div class="flex flex-col justify-center gap-1">
+    <label class="from-stone-100" for="stName">Student Name</label>
+    <input
+      [(ngModel)]="student.name"
+      type="text"
+      min="3"
+      id="stName"
+      placeholder="Enter student name"
+      class="bg-gray-50 border border-zinc-800 hover:cursor-pointer hover:bg-blue-100 placeholder:text-gray-400 p-2"
+    />
+    <!-- ? Message for user -->
+
+    <div class="min-h-12 min-w-6 m-auto">
+      @if(this.clicked && !this.student.name){
+      <p class="p-2 text-red-800 bg-red-200">You have to enter student name</p>
+      }
+      <!--* if there name input -->
+      @if(student.name){
+      <!--* if name only alpaha characters -->
+      @if(isNameCharsValid(student.name)){
+      <!--* if name bigger than 3 -->
+      @if(student.name.trim().length > 2){
+      <!-- * name valid -->
+      <p class="p-2 text-green-800 bg-green-200">Valid name</p>
+      }
+      <!-- ! less than 3 -->
+      @else {
+      <p class="p-2 text-red-800 bg-red-200">
+        Name must be at least characters
+      </p>
+      }}
+      <!-- ! not alpha -->
+      @else{
+      <p class="p-2 text-red-800 bg-red-200">
+        Name must be only alpha characters
+      </p>
+      } }
+    </div>
+  </div>
+
+  <!--^ Age Input -->
+  <div class="flex flex-col justify-center gap-1">
+    <label class="from-stone-100" for="stName">Student Age [16-29]</label>
+    <input
+      [(ngModel)]="student.age"
+      type="number"
+      min="3"
+      id="stAge"
+      placeholder="Enter student Age"
+      class="bg-gray-50 border border-zinc-800 hover:cursor-pointer hover:bg-blue-100 placeholder:text-gray-400 p-2"
+    />
+    <!-- ? Message for user -->
+    <div class="min-h-12 min-w-6 m-auto">
+      @if(student.age){ @if(student.age > 15 && student.age <30 ){
+      <p class="p-2 text-green-800 bg-green-200">Valid age</p>
+
+      } @else {
+      <p class="p-2 text-red-800 bg-red-200">age must be between 15 and 30</p>
+      } }
+    </div>
+  </div>
+
+  <button
+    type="button"
+    (click)="registerStudent()"
+    class="border-t-neutral-800 bg-blue-900 text-gray-200 w-[10rem] m-auto rounded-lg hover:bg-blue-800 hover:cursor-pointer hover:scale-110 transition-all duration-200"
+  >
+    Add Student
+  </button>
+</div>

@@ -1,0 +1,23 @@
+<div class="mt-12 flex flex-col">
+  <h3
+    class="w-fit p-3 m-auto text-center font-stretch-120% font-[600] text-2xl mask-linear-from-neutral-100"
+  >
+    Students
+  </h3>
+  <table class="m-2 bg-gray-300">
+    <thead>
+      <th class="border-r-2 border-amber-900 mr-1 w-[70%]">Name</th>
+      <th class="w-[25%]">Age</th>
+    </thead>
+    <tbody class="*:text-center">
+      <!-- odd is micro-variable which ngFor provides -->
+      <tr
+        *ngFor="let student of students; odd as isOdd"
+        [ngClass]="isOdd ? 'bg-gray-200' : 'bg-gray-100'"
+      >
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

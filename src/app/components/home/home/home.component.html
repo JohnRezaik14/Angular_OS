@@ -1,0 +1,10 @@
+<div
+  class="bg-gray-100 @container shadow-sm first:rounded-[5px] first:w-[70%] first:m-auto w-full m-0 p-[1rem] flex flex-col gap-y-4 justify-around font-mono *:text-xl"
+>
+  <!-- <div class="flex flex-row ">
+    <button type="button" (click)="chooseLab(3)">lab-3</button>
+    <button type="button" (click)="chooseLab(4)>lab-4</button>
+  </div> -->
+  <app-register (sendStudent)="receiveStudentData($event)"></app-register>
+  <app-students [students]="studentsFromRegister"></app-students>
+</div>
