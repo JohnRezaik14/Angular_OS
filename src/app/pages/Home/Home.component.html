@@ -1,0 +1,38 @@
+<header class="m-auto text-body font-monospace fw-bold fs-1 text-center">
+  Welcome to Your Dashboard
+</header>
+<main class="row justify-content-center gap-2 mb-2">
+  <a
+    class="nav-link col-auto"
+    routerLink="users/list"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Users</a
+  >
+
+  <a
+    class="nav-link col-auto"
+    routerLink="users/add"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Add New User</a
+  >
+
+  <a
+    class="nav-link col-auto"
+    routerLink="users/edit"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Edit User</a
+  >
+
+  <a
+    class="nav-link col-auto"
+    routerLink="users/delete"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Delete User</a
+  >
+</main>
+<div class="w-50 container-sm"><app-Search></app-Search></div>
+<router-outlet></router-outlet>
